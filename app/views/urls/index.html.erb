@@ -1,0 +1,17 @@
+<div = "row">
+
+<div class="col-lg-6 col-lg-offset-4">
+
+<h1>Welcome to Rit.ly</h1>
+
+<%= form_for @url, url:{action:"create"} do |f|%> 
+
+    <%= f.text_field :og_url, placeholder: "enter your url"%> <br>
+
+
+    <%= f.submit class: "btn btn-primary" %>
+<% end %>
+
+</div>
+
+</div>
