@@ -9,6 +9,10 @@ Ritly::Application.routes.draw do
 
   post '/', to: 'urls#create'
 
+  get '/admin', to: 'urls#admin', as: :admin
+
+  delete '/admin', to: 'urls#delete'
+
   
 end
 
