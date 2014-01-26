@@ -6,10 +6,11 @@
 
 <%= form_for @url, url:{action:"create"} do |f|%> 
 
-    <%= f.text_field :og_url, placeholder: "enter your url"%> <br>
-
+    http://<%= f.text_field :og_url, placeholder: "enter your url"%> <br>
+    <%= f.text_field :new_url, placeholder: "enter your string"%> <br>
 
     <%= f.submit class: "btn btn-primary" %>
+
 <% end %>
 
 </div>
