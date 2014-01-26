@@ -10,7 +10,7 @@ class UrlsController < ApplicationController
   end
 
   def create
-  	url = params.require(:url).permit(:og_url, :new_url)
+  	url = params.require(:url).permit(:og_url, :new_url, :user_count)
   	user_url = url["og_url"] # input url
     new_string = url["new_url"] # input_string
     # checks if the user input string exists in the db
@@ -24,7 +24,7 @@ class UrlsController < ApplicationController
         redirect_to '/' # how do I add the params[:url] to the redirect?
       else
         string = new_string
-        @url = Url.create(og_url: user_url, new_url: string)
+        @url = Url.create(og_url: user_url, new_url: string, user_count: 0)
         redirect_to "/go/#{@url.new_url}/preview"
       end
 		
@@ -33,6 +33,8 @@ class UrlsController < ApplicationController
   def visit
     string = params[:string]
     user_url = Url.find_by new_url: string
+    user_url.user_count += 1
+    user_url.update(user_count: user_url.user_count)
     redirect_to "http://#{user_url.og_url}"
   end
 

@@ -1,21 +1,29 @@
-<div ="row">
+<div class="navigation">
 
-<div class="col-sm-8 col-sm-offset-2">
-
-<h1 id="ritly">Welcome to Rit.ly</h1><br>
-
-<%= form_for @url, url:{action:"create"} do |f|%> 
-	<h4 id="flash"><%= flash[:warning] %></h4>
-	<label for="exampleInputPassword1">URL</label>
-    http://<%= f.text_field :og_url, :class => "form-control", placeholder: "http://"%>
-    <label for="exampleInputPassword1">String</label>
-    (optional)<%= f.text_field :new_url, :class => "form-control", placeholder: "enter your string"%><br>
-
-    <%= f.submit class: "btn btn-primary" %>
-
-
-<% end %>
+	<a id="ritly" href="/">R.</a>
 
 </div>
 
+<div class="container">
+	<div ="row">
+
+		<div class="col-sm-8 col-sm-offset-2">
+
+			<h1 id="ritly">Welcome to Rit.ly</h1><br>
+
+				<%= form_for @url, url:{action:"create"} do |f|%> 
+				<h4 id="flash"><%= flash[:warning] %></h4>
+				<label for="exampleInputPassword1">URL</label>
+		    http://<%= f.text_field :og_url, :class => "form-control", placeholder: "http://"%>
+		    <label for="exampleInputPassword1">String</label>
+		    (optional)<%= f.text_field :new_url, :class => "form-control", placeholder: "enter your string"%><br>
+
+		    <%= f.submit class: "btn btn-primary btn-lg" %>
+
+
+			<% end %>
+
+		</div>
+
+	</div>
 </div>
