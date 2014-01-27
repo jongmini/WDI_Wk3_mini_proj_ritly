@@ -11,26 +11,26 @@ class UrlsController < ApplicationController
 
   def create
   	url = params.require(:url).permit(:og_url, :new_url, :user_count)
-  	if url["og_url"]==""
-    flash[:warning]="Please enter your URL"
-    redirect_to '/'
+    if url["og_url"]==""
+      flash[:warning]="Please enter your URL"
+      redirect_to '/'
     else 
-    user_url = url["og_url"] # input url
-    new_string = url["new_url"] # input_string
-    # checks if the user input string exists in the db
-      if new_string == ""
-        string = SecureRandom.urlsafe_base64(user_url.length)
-        @url = Url.create(og_url: user_url, new_url: string, user_count: 0)
-        redirect_to "/go/#{@url.new_url}/preview"
-      elsif Url.where(new_url: new_string).exists? 
-        # if the string exisits in the db then flash warning and redirect
-        flash[:warning]="the requested URL is not available"
-        redirect_to '/' # how do I add the params[:url] to the redirect?
-      else
-        string = new_string
-        @url = Url.create(og_url: user_url, new_url: string, user_count: 0)
-        redirect_to "/go/#{@url.new_url}/preview"
-      end
+      user_url = url["og_url"] # input url
+      new_string = url["new_url"] # input_string
+      # checks if the user input string exists in the db
+        if new_string == ""
+          string = SecureRandom.urlsafe_base64(user_url.length)
+          @url = Url.create(og_url: user_url, new_url: string, user_count: 0)
+          redirect_to "/go/#{@url.new_url}/preview"
+        elsif Url.where(new_url: new_string).exists? 
+          # if the string exisits in the db then flash warning and redirect
+          flash[:warning]="the requested URL is not available"
+          redirect_to '/' # how do I add the params[:url] to the redirect?
+        else
+          string = new_string
+          @url = Url.create(og_url: user_url, new_url: string, user_count: 0)
+          redirect_to "/go/#{@url.new_url}/preview"
+        end
     end
 		
   end
