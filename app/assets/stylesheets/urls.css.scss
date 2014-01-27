@@ -26,7 +26,7 @@ body {
 }
 
 .show {
-	background-color: white;
+	background-color: rgba(236, 240, 241,0.7);
 	text-align:center;
 	margin-top: -50px;
 	border-radius: 10px;
@@ -90,3 +90,17 @@ margin: 10px;
 	background-color: rgba(189, 195, 199,0);
 	float: right;
 }
+
+.tbox {
+	height: 15%; 
+	width: 15%; 
+	float: right;
+}
+
+.tada:hover {
+	animation: tada 3s;
+	-webkit-animation: tada 3s;
+	-moz-animation: tada 3s;
+}
+
+
