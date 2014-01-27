@@ -2,6 +2,8 @@
 
 	<a id="ritly" href="/">R.</a>
 
+	<a id="admin-btn" href="/admin">  </a>
+
 </div>
 
 <div class="container">
@@ -9,19 +11,21 @@
 
 		<div class="col-sm-8 col-sm-offset-2">
 
-			<h1 id="ritly">Welcome to Rit.ly</h1><br>
+			<h1 id="ritly-lg">Welcome to Rit.ly</h1>
 
 				<%= form_for @url, url:{action:"create"} do |f|%> 
 				<h4 id="flash"><%= flash[:warning] %></h4>
-				<label for="exampleInputPassword1">URL</label>
+				<label for="exampleInputPassword1"><h4>URL</h4></label>
 		    http://<%= f.text_field :og_url, :class => "form-control", placeholder: "http://"%>
-		    <label for="exampleInputPassword1">String</label>
+		    <label for="exampleInputPassword1"><h4>String</h4></label>
 		    (optional)<%= f.text_field :new_url, :class => "form-control", placeholder: "enter your string"%><br>
 
-		    <%= f.submit class: "btn btn-primary btn-lg" %>
+		    <%= f.submit "Rit.lyfy", class: "btn btn-primary btn-lg" %>
 
 
 			<% end %>
+
+			<img src="../../assets/tbox.png" height="20%" width="20%">
 
 		</div>
 
