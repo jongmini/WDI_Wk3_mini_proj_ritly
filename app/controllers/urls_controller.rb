@@ -2,8 +2,14 @@ class UrlsController < ApplicationController
   before_filter :signed_in_user, only: [:create, :new, :edit, :update]
 
 	def index
- 
-		@url = Url.new
+    if signed_in?
+      # user = @current_user
+      flash[:name]="#{current_user.name}"
+    else
+		  flash[:name]=""
+    end
+
+    @url=Url.new
 	end
 
   def show

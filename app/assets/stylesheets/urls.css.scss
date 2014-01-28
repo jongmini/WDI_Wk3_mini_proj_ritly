@@ -13,6 +13,10 @@ body {
   margin:0;
 }
 
+#table-color {
+	background-color: white;
+}
+
 
 #background-cover {
 	background-color: rgba(230, 126, 34,0.8);
@@ -34,7 +38,7 @@ body {
 .show {
 	background-color: rgba(236, 240, 241,0.7);
 	text-align:center;
-	margin-top: 10px;
+	margin-top: 100px;
 	border-radius: 10px;
 }
 

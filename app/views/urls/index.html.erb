@@ -5,7 +5,7 @@
 
 		<div class="col-sm-8 col-sm-offset-2" id="welcome">
 
-			<h1 id="ritly-lg">Welcome to Rit.ly</h1>
+			<h1 id="ritly-lg">Welcome to Rit.ly <%=flash[:name]%></h1>
 
 				<%= form_for @url, url:{action:"create"} do |f|%> 
 				<h4 id="flash"><%= flash[:warning] %></h4>

@@ -3,8 +3,8 @@
 	<h1>Sign up</h1>
     <div class="row">
         
-        <%=form_for(@user) do |f| %>
-        <%= f.label :name %>
+      <%=form_for(@user) do |f| %>
+      <%= f.label :name %>
       <%= f.text_field :name %>
       <br>
       <%= f.label :email %>
@@ -17,6 +17,6 @@
       <%= f.password_field :password_confirmation %>
       <br>
       <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
-    <% end %>
+      <% end %>
     </div>
 </div>
