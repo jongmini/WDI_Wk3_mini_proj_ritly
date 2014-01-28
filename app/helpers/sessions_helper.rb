@@ -8,7 +8,7 @@ module SessionsHelper
 end
 
 def signed_in?
-    !current_user.nil?
+    !current_user.nil?  # equivalent to "not current_user.nil?"
 end
 
 # Authorization: signed_in_user is called in a before_filter

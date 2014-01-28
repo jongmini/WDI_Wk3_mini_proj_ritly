@@ -8,6 +8,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+
+    @db = Url.where(userID: @user.id)
   end
 
   def new

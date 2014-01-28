@@ -1,7 +1,7 @@
-
+<div class="container">
 <h1>Your Ritly</h1>
-<div class="row">
-    <aside class="span4">
+	<div class="row">
+    <div class="span4">
         
 		<div class="row">
 		  <aside class="span4">
@@ -12,5 +12,31 @@
 		  </aside>
 		</div>
 
-    </aside>
+		
+
+			<table class="table table-condensed table-hover">
+				<th colspan="6">Your Ritly Database<h4 id="flash"><%= flash[:warning] %></h4></th>
+					<tr>
+
+						<td>Original URL</td>
+						<td>String URL</td>
+						<td>User_Count</td>
+						<td>Created</td>
+						<td>Updated</td>
+						<% @db.each do |db| %>
+						<tr>
+						<td><a href="/go/<%=db["new_url"]%>/preview"><%= db["og_url"] %></a></td>
+						<td><a href="/go/<%=db["new_url"]%>/preview"><%= db["new_url"] %></a></td>
+						<td><%= db["user_count"] %></td>
+						<td><%= db["created_at"] %></td>
+						<td><%= db["updated_at"] %></td>
+						<td><%= button_to "delete", {controller: :urls, action: :delete, id: db["id"] }, method: :delete, class: "btn btn-danger btn-sm" %></td>
+
+					</tr>
+						<% end %>
+
+			</table>
+
+		</div>
+	</div>
 </div>

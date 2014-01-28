@@ -2,6 +2,7 @@ class UrlsController < ApplicationController
   before_filter :signed_in_user, only: [:create, :new, :edit, :update]
 
 	def index
+ 
 		@url = Url.new
 	end
 
@@ -12,7 +13,6 @@ class UrlsController < ApplicationController
 
   def create
     user = @current_user
-
   	url = params.require(:url).permit(:og_url, :new_url, :user_count, :userID)
     if url["og_url"]==""
       flash[:warning]="Please enter your URL"
