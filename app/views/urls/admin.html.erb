@@ -18,6 +18,7 @@
 				<td>Original URL</td>
 				<td>String URL</td>
 				<td>User_Count</td>
+				<td>User_ID</td>
 				<td>Created</td>
 				<td>Updated</td>
 				<% @db.each do |db| %>
@@ -26,6 +27,7 @@
 				<td><a href="/go/<%=db["new_url"]%>/preview"><%= db["og_url"] %></a></td>
 				<td><a href="/go/<%=db["new_url"]%>/preview"><%= db["new_url"] %></a></td>
 				<td><%= db["user_count"] %></td>
+				<td><%= db["userID"] %></td>
 				<td><%= db["created_at"] %></td>
 				<td><%= db["updated_at"] %></td>
 				<td><%= button_to "delete", {controller: :urls, action: :delete, id: db["id"] }, method: :delete, class: "btn btn-danger btn-sm" %></td>
