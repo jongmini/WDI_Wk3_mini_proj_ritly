@@ -13,6 +13,7 @@ body {
   margin:0;
 }
 
+
 #background-cover {
 	background-color: rgba(230, 126, 34,0.8);
 	width: 100%;
@@ -26,6 +27,10 @@ body {
 	
 }
 
+#welcome {
+	margin-top: 90px;
+}
+
 .show {
 	background-color: rgba(236, 240, 241,0.7);
 	text-align:center;
@@ -33,13 +38,32 @@ body {
 	border-radius: 10px;
 }
 
+#nav-color {
+	background-color: rgba(127, 140, 141,0.8);
+	border-color: rgba(127, 140, 141,0.8);
+	height: 90px;
+}
 
 #ritly {
 	font-family: 'Fredericka the Great', cursive;
 	font-size: 50px;
 	padding-left: 5px;
 	color: white;
+}
 
+#ritly:hover {
+	color:black;
+}
+
+#ritly-sm:hover {
+	color:black;
+}
+
+
+#ritly-sm {
+	font-family: 'Fredericka the Great', cursive;
+	font-size: 20px;
+	color: white;
 }
 
 #ritly-lg {
