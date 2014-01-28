@@ -1,7 +1,7 @@
 Ritly::Application.routes.draw do
 
 
-  get '/', to: 'urls#index', as: :root
+  root 'urls#index'
 
   get '/go/:string', to: 'urls#visit', as: :visit
 
@@ -13,6 +13,12 @@ Ritly::Application.routes.draw do
 
   delete '/admin', to: 'urls#delete'
 
+  resources :users, :sessions
+
+  get '/signup' => 'users#new'
+  delete '/signout', to: 'sessions#destroy'
+  get'/signin' => 'sessions#new'
+
   
 end
 
@@ -20,5 +26,4 @@ end
 
 
 
- # get 'go/:string/edit', to: 'urls#edit', as: :edit_url
-  # patch '/go/:string', to: 'urls#update'
+
